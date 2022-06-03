@@ -30,4 +30,4 @@ For this section's project, you'll create a currency exchange application. A use
 ## Known Bugs 
 
 ## License
-_Copyright (c) MONTH DAY, 2022 Arthur Edward Ortiz MIT_
+_Copyright (c) June 3, 2022 Arthur Edward Ortiz MIT_
