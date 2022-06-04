@@ -6,11 +6,12 @@ import ExchangeRate from './js/currency-exchanger';
 
 $(document).ready(function(){
   $('#exchange').click(function() {
-    console.log("Button");
+    const dollar = parseFloat($("#dollar").val()).toFixed(2);
+    console.log(dollar);
     //clearFields();
     ExchangeRate.getExchange()
       .then(function(response) {
-        console.log(response.conversion_rates.AED);
+        console.log(response.conversion_rates);
         return response;
       });
   });
