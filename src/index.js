@@ -10,7 +10,8 @@ $(document).ready(function(){
     //clearFields();
     ExchangeRate.getExchange()
       .then(function(response) {
-        console.log(response);
+        console.log(response.conversion_rates.AED);
+        return response;
       });
   });
 });
