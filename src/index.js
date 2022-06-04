@@ -8,10 +8,12 @@ $(document).ready(function(){
   $('#exchange').click(function() {
     const dollar = parseFloat($("#dollar").val()).toFixed(2);
     console.log(dollar);
-    //clearFields();
-    ExchangeRate.getExchange()
+    const targetCode = $("#codes").val();
+    console.log(targetCode);
+
+    ExchangeRate.getExchange(targetCode, dollar)
       .then(function(response) {
-        console.log(response.conversion_rates);
+        console.log(response.conversion_result);
         return response;
       });
   });
