@@ -5,16 +5,32 @@ import './css/styles.css';
 import ExchangeRate from './js/currency-exchanger';
 
 $(document).ready(function(){
-  $('#exchange').click(function() {
+  $('#exchange').click(function(event) {
+    event.preventDefault();
     const dollar = parseFloat($("#dollar").val()).toFixed(2);
-    console.log(dollar);
     const targetCode = $("#codes").val();
-    console.log(targetCode);
-
-    ExchangeRate.getExchange(targetCode, dollar)
-      .then(function(response) {
-        console.log(response.conversion_result);
-        return response;
-      });
+    if ( dollar === 4){
+      $("#output").hide();
+      $("#error").show();
+    } else {
+      $("#output").show();
+      $("#error").hide();
+      ExchangeRate.getExchange(targetCode, dollar)
+        .then(function(response) {
+          if (response.result === "success") {
+            $("#output").text(`${dollar} USD is worth ${parseFloat(response.conversion_result).toFixed(2)} ${targetCode}`);
+          } else {
+            $("#output").hide();
+            $("#error").hide();
+            $("#apiError").show();
+            $("#apiError").text(`API ERROR STATUS ${response}`);
+            console.log(response.status);
+          }
+        }); 
+    }
   });
 });
+
+
+
+//if ( dollar === "NaN" || dollar < 0 || targetCode === "")

@@ -9,3 +9,15 @@ header {
   padding: 1rem;
   background-color: darkgray;
 }
+
+#error {
+  display: none;
+}
+
+#output {
+  display: none;
+}
+
+#apiError {
+  display: none;
+}
