@@ -9,7 +9,7 @@ $(document).ready(function(){
     event.preventDefault();
     const dollar = parseFloat($("#dollar").val()).toFixed(2);
     const targetCode = $("#codes").val();
-    if ( dollar === 4){
+    if ( dollar === "NaN" || dollar < 0 || targetCode === ""){
       $("#output").hide();
       $("#error").show();
     } else {
@@ -33,4 +33,3 @@ $(document).ready(function(){
 
 
 
-//if ( dollar === "NaN" || dollar < 0 || targetCode === "")
