@@ -21,6 +21,8 @@ For this section's project, you'll create a currency exchange application. A use
 ## Setup / Installation 
 
 1. Clone repo onto your computer.
+2. Go to[ExchangeRate-API](https://www.exchangerate-api.com/),aquire an API Key.
+3. Create a .env file in your root directory and paste `API_KEY=` appended by your API key. 
 2. Open directory via teriminal and excute `$ npm install`
 3. Once installed, in the terminl, excute  `$ npm run build`
 4. Complete a test of all the functions with `$npm run test`
